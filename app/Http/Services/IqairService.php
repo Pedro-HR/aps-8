@@ -92,7 +92,10 @@ class IqairService
             ];
 
             $response = $this->sendCurl();
-            if ($response['status'] != "fail" && !empty($response)){
+
+            Log::info('Response da API: ', $response);
+
+            if ($response['status'] != "fail" && !empty($response)) {
                 $this->prepareCityData($response);
             }
         }

@@ -25,7 +25,7 @@ class IqairController extends Controller
             $data = $this->service->city();
 
             // Log dos dados Recebidos
-            Log::info('Dados: ', $data);
+            Log::info('Dados para o front: ', $data);
 
             return response()->json(array_values($data), Response::HTTP_OK);
         } catch (\Exception $exception) {
