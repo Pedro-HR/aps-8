@@ -49,7 +49,6 @@ class IqairService
         $this->accessToken = env('IQAIR_TOKEN');
     }
 
-
     public function sendCurl(): array
     {
         $this->prepareUrl();
