@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Services;
 
+use Illuminate\Support\Facades\Log;
+
 class IqairService
 {
     private string $url;
@@ -66,6 +68,9 @@ class IqairService
 
         $result = curl_exec($curl);
         curl_close($curl);
+
+        // Log Endpoint
+        Log::info('Endpoint: ' . print_r($this->url, true));
 
         return json_decode($result, true);
     }

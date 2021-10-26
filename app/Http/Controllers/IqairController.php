@@ -23,8 +23,10 @@ class IqairController extends Controller
     {
         try {
             $data = $this->service->city();
+
             // Log dos dados Recebidos
             Log::info('Dados: ', $data);
+
             return response()->json(array_values($data), Response::HTTP_OK);
         } catch (\Exception $exception) {
             report($exception);
