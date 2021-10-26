@@ -69,9 +69,6 @@ class IqairService
         $result = curl_exec($curl);
         curl_close($curl);
 
-        // Log Endpoint
-        Log::info('Endpoint: ' . print_r($this->url, true));
-
         return json_decode($result, true);
     }
 
@@ -92,6 +89,9 @@ class IqairService
             ];
 
             $response = $this->sendCurl();
+
+            // Log Endpoint
+            Log::info('Endpoint: ' . print_r($this->url, true));
 
             // Log para a Resposta da API
             Log::info('Response da API: ', $response);
