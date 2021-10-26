@@ -115,7 +115,7 @@ class IqairService
     {
         $order = 1;
 
-        $ranksOrder= collect($responseData)->sortBy('aqius')->toArray();
+        $ranksOrder= collect($responseData)->sortByDesc('aqius')->toArray();
         foreach ($ranksOrder as &$rankOrder) {
             $rankOrder['rank'] = $order;
             $order++;
