@@ -93,6 +93,7 @@ class IqairService
 
             $response = $this->sendCurl();
 
+            // Log para a Resposta da API
             Log::info('Response da API: ', $response);
 
             if ($response['status'] != "fail" && !empty($response)) {
