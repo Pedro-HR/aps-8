@@ -92,8 +92,8 @@ class IqairService
             // Log Endpoint
             Log::info('Endpoint: ' . print_r($this->url, true));
 
-            // Log para a Resposta da API
-            Log::info('Response da API: ', $response);
+            // Log para a Resposta da WEB SERVICE
+            Log::info('Response do WEB SERVICE: ', $response);
 
             if ($response['status'] != "fail" && !empty($response)) {
                 $this->prepareCityData($response);
